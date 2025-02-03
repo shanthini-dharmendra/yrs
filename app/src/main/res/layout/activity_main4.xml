@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/payment_background"
+    android:padding="16dp">
+
+    <!-- Payment Title -->
+    <TextView
+        android:id="@+id/paymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Information"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <!-- Movie and Seat Summary -->
+    <TextView
+        android:id="@+id/movieSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movie: Movie Name"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/paymentTitle"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/seatsSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seats Selected: 1, 3, 5"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/movieSummary"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/totalAmountSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Amount: $30"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/seatsSummary"
+        android:layout_marginTop="8dp" />
+
+    <!-- Payment Methods -->
+    <TextView
+        android:id="@+id/paymentMethodTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Payment Method"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_below="@id/totalAmountSummary"
+        android:layout_marginTop="32dp" />
+
+    <RadioGroup
+        android:id="@+id/paymentMethodGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/paymentMethodTitle"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/cardPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit/Debit Card"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/paypalPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PayPal"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/cashPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cash on Delivery"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <!-- Final Payment Button -->
+    <Button
+        android:id="@+id/completePaymentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete Payment"
+        android:backgroundTint="@color/button_color"
+        android:textColor="@color/white"
+        android:layout_below="@id/paymentMethodGroup"
+        android:layout_marginTop="24dp" />
+</RelativeLayout>

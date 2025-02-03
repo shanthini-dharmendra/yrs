@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="button_color">#FF6200EE</color>
+    <color name="primaryColor">#6200EE</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="green">#4CAF50</color>
+    <color name="light_gray">#F3F4F6</color>  <!-- Light gray background -->
+    <color name="card_background">#FFFFFF</color>  <!-- White background for the card -->
+    <color name="gradient_start">#3F51B5</color>  <!-- Dark Blue -->
+    <color name="gradient_end">#FF9800</color>  <!-- Orange -->
+
+
+
+</resources>
