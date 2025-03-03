@@ -46,18 +46,18 @@ class MainActivity2 : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_list -> {
-                Toast.makeText(this, "Opening List Page...", Toast.LENGTH_SHORT).show()
+                showToast("Opening List Page...")
                 startActivity(Intent(this, MainActivity2::class.java))
                 true
             }
             R.id.menu_about -> {
-                Toast.makeText(this, "Opening About Page...", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, homeActivity::class.java)) // Now moves to activity_home.xml
+                showToast("Opening About Page...")
+                startActivity(Intent(this, homeActivity::class.java)) // Corrected class name
                 true
             }
             R.id.menu_history -> {
-                Toast.makeText(this, "Opening History Page...", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, BookingHistoryActivity::class.java)) // Now moves to booking_item.xml
+                showToast("Opening History Page...")
+                startActivity(Intent(this, TicketActivity::class.java)) // Corrected class name
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -78,10 +78,11 @@ class MainActivity2 : AppCompatActivity() {
     // Handle User Selection from Context Menu
     override fun onContextItemSelected(item: MenuItem): Boolean {
         userRating = item.itemId // Store selected rating
-        Toast.makeText(this, "You rated: ${"⭐".repeat(userRating)}", Toast.LENGTH_SHORT).show()
+        showToast("You rated: ${"⭐".repeat(userRating)}")
         return true
     }
 
+    // Open Movie Details Page
     private fun openMovieDetails(title: String, genre: String, description: String, imageResId: Int) {
         val intent = Intent(this, ItemMovieActivity::class.java).apply {
             putExtra("MOVIE_TITLE", title)
@@ -91,5 +92,10 @@ class MainActivity2 : AppCompatActivity() {
             putExtra("MOVIE_RATING", userRating) // Pass rating to next activity
         }
         startActivity(intent)
+    }
+
+    // Utility function to show a toast message
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
