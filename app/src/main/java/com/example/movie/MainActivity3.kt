@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.gridlayout.widget.GridLayout
 
 class MainActivity3 : AppCompatActivity() {
@@ -18,6 +19,7 @@ class MainActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
 
+        // Initialize UI elements
         selectedSeatsText = findViewById(R.id.selectedSeatsText)
         totalPriceText = findViewById(R.id.totalPrice)
         val seatGrid = findViewById<GridLayout>(R.id.seatGrid)
@@ -28,12 +30,14 @@ class MainActivity3 : AppCompatActivity() {
         for (i in 1..20) {
             val seatButton = Button(this).apply {
                 text = i.toString()
-                setBackgroundResource(R.drawable.seat_selector) // Apply selector
-                setTextColor(resources.getColor(android.R.color.black))
-                width = 120
-                height = 120
+                setBackgroundResource(R.drawable.seat_selector) // Default seat background
+                setTextColor(ContextCompat.getColor(context, android.R.color.black))
+                layoutParams = GridLayout.LayoutParams().apply {
+                    width = 180
+                    height = 180
+                    setMargins(8, 8, 8, 8)
+                }
                 textSize = 16f
-                setPadding(8, 8, 8, 8)
                 setOnClickListener { toggleSeatSelection(this, i) }
             }
             seatButtons.add(seatButton)
@@ -54,16 +58,15 @@ class MainActivity3 : AppCompatActivity() {
             }
             startActivity(intent)
         }
-
     }
 
     private fun toggleSeatSelection(seat: Button, seatNumber: Int) {
         if (selectedSeats.contains(seatNumber)) {
             selectedSeats.remove(seatNumber)
-            seat.isSelected = false
+            seat.setBackgroundResource(R.drawable.seat_selector) // Default seat background
         } else {
             selectedSeats.add(seatNumber)
-            seat.isSelected = true
+            seat.setBackgroundResource(R.drawable.selected_seat) // Selected seat background
         }
 
         val seatNumbers = if (selectedSeats.isEmpty()) "None" else selectedSeats.joinToString(", ")

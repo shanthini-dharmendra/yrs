@@ -21,11 +21,12 @@ class BookingHistoryActivity : AppCompatActivity() {
         val bookingDate = intent.getStringExtra("BOOKING_DATE") ?: "Unknown Date"
         val selectedSeats = intent.getStringExtra("SELECTED_SEATS") ?: "No seats selected"
 
-        // Clear previous bookings and show only the latest one
+        // Clear previous bookings and show only the latest
         bookingListContainer.removeAllViews()
 
         // Inflate the selected movie details into the booking history
-        val bookingItem = LayoutInflater.from(this).inflate(R.layout.booking_item, bookingListContainer, false)
+        val bookingItem = LayoutInflater.from(this).inflate(R.layout.booking_item, bookingListContainer,
+            false)
         val movieNameTextView = bookingItem.findViewById<TextView>(R.id.movieName)
         val bookingDateTextView = bookingItem.findViewById<TextView>(R.id.bookingDateTime)
         val seatNumbersTextView = bookingItem.findViewById<TextView>(R.id.seatNumbers)
@@ -41,7 +42,8 @@ class BookingHistoryActivity : AppCompatActivity() {
         downloadTicketButton.setOnClickListener {
             val intent = Intent(this, TicketActivity::class.java).apply {
                 putExtra("MOVIE_TITLE", movieTitle)
-                putExtra("BOOKING_DATE", bookingDate)
+                putExtra("BOOKING_DATE",
+                bookingDate)
                 putExtra("SELECTED_SEATS", selectedSeats)
             }
             startActivity(intent)

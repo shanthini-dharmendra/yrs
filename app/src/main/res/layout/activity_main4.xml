@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/payment_background"
     android:padding="16dp">
-
     <!-- Payment Title -->
     <TextView
         android:id="@+id/paymentTitle"
@@ -14,7 +13,6 @@
         android:textSize="22sp"
         android:textColor="@color/black"
         android:textStyle="bold" />
-
     <!-- Movie and Seat Summary -->
     <TextView
         android:id="@+id/movieSummary"
@@ -25,7 +23,6 @@
         android:textColor="@color/black"
         android:layout_below="@id/paymentTitle"
         android:layout_marginTop="24dp" />
-
     <TextView
         android:id="@+id/seatsSummary"
         android:layout_width="wrap_content"
@@ -35,7 +32,6 @@
         android:textColor="@color/black"
         android:layout_below="@id/movieSummary"
         android:layout_marginTop="8dp" />
-
     <TextView
         android:id="@+id/totalAmountSummary"
         android:layout_width="wrap_content"

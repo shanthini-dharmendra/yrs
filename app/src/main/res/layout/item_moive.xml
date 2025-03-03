@@ -80,8 +80,7 @@
         android:id="@+id/bookTicketsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Book Tickets"
-        android:textSize="18sp"
+        android:text="Book Tickets"         android:textSize="18sp"
         android:backgroundTint="@color/black"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/movieCard"
@@ -89,5 +88,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="16dp"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

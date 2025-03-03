@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"     android:layout_height="match_parent"
     android:background="@drawable/seat_background"
     android:padding="16dp"
     tools:context=".MainActivity3">
@@ -15,15 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select Your Seats"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="24sp"         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Seat Grid Layout -->
+
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/seatGrid"
         android:layout_width="match_parent"
@@ -33,7 +31,8 @@
         app:layout_constraintTop_toBottomOf="@id/movieTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rowCount="4" />
+        app:rowCount="4"
+        tools:ignore="MissingClass" />
 
     <!-- Selected Seats Info -->
     <TextView

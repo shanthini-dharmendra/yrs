@@ -3,22 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_main"
-    android:layout_width="match_parent"
+    android:id="@+id/home_main"     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
-
-    <!-- App Logo -->
-    <ImageView
-        android:id="@+id/yrs"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/yrs"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp" />
-
+    <!-- App Logo -->     <ImageView
+    android:id="@+id/yrs"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/yrs"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="50dp" />
     <!-- App Name (Clickable) -->
     <TextView
         android:id="@+id/YRSMovieBooking"
@@ -33,5 +29,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
